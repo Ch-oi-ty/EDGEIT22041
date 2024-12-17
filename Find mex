@@ -1,0 +1,24 @@
+def main():
+    test = 1
+    # test = int(input())  # Uncomment this line if you want to take multiple test cases
+
+    while test > 0:
+        test -= 1
+
+        N = int(input())
+        arr = list(map(int, input().split()))
+
+        mx = max(arr)
+
+        check = [0] * (200100)
+        j = 0
+        ans = [0] * N
+
+        for i in range(N):
+            ans[arr[i]] = 1
+            while ans[j] == 1:
+                j += 1
+            print(j, end=' ')
+
+if __name__ == "__main__":
+    main()
